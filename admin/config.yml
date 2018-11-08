@@ -1,0 +1,21 @@
+
+backend:
+  name: github
+  repo: client9/client9-website-2017
+  branch: master
+
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - create: true
+    name: "post"
+    label: "post"
+    folder: "content/post"
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+

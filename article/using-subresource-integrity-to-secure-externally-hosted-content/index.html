@@ -1,0 +1,126 @@
+<!doctype html><html lang=en>
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,minimum-scale=1,initial-scale=1">
+<title>Using Subresource Integrity to Secure Externally Hosted Content | Nick Galbreath</title>
+<meta property=og:site_name content="Nick Galbreath">
+<meta property=og:type content=article>
+<meta property=og:title content="Using Subresource Integrity to Secure Externally Hosted Content">
+<meta property=og:description content>
+<meta property=og:url content=https://www.client9.com/article/using-subresource-integrity-to-secure-externally-hosted-content/>
+<meta property=og:locale content=en>
+<meta property=article:published_time content=2016-02-29T00:00:00Z>
+<meta name=twitter:card content=summary>
+<meta name=twitter:site content=NGalbreath>
+<meta name=twitter:creator content=NGalbreath>
+<meta name=description content>
+<meta name=format-detection content="telephone=no">
+<meta name=generator content="Hugo 0.51">
+<link rel=canonical href=https://www.client9.com/article/using-subresource-integrity-to-secure-externally-hosted-content/>
+<style>/*!* Bootstrap v4.1.3 (https://getbootstrap.com/)
+* Copyright 2011-2018 The Bootstrap Authors
+* Copyright 2011-2018 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)*/*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:#0000}@-ms-viewport{width:device-width}article,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}blockquote{margin:0 0 1rem}strong{font-weight:bolder}a{color:#007bff;text-decoration:none;background-color:#0000;-webkit-text-decoration-skip:objects}a:hover{color:#0056b3;text-decoration:underline}a:not([href]):not([tabindex]){color:inherit;text-decoration:none}a:not([href]):not([tabindex]):focus,a:not([href]):not([tabindex]):hover{color:inherit;text-decoration:none}a:not([href]):not([tabindex]):focus{outline:0}code,pre{font-family:SFMono-Regular,Menlo,Monaco,Consolas,liberation mono,courier new,monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto;-ms-overflow-style:scrollbar}img{vertical-align:middle;border-style:none}table{border-collapse:collapse}th{text-align:inherit}.h2,.h4,.h5,h1,h2,h3{margin-bottom:.5rem;font-family:inherit;font-weight:500;line-height:1.2;color:inherit}h1{font-size:2.5rem}.h2,h2{font-size:2rem}h3{font-size:1.75rem}.h4{font-size:1.5rem}.h5{font-size:1.25rem}hr{margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid #0000001a}.small{font-size:80%;font-weight:400}code{font-size:87.5%;color:#e83e8c;word-break:break-word}a>code{color:inherit}pre{display:block;font-size:87.5%;color:#212529}pre code{font-size:inherit;color:inherit;word-break:normal}.container-fluid{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.col-lg-8{position:relative;width:100%;min-height:1px;padding-right:15px;padding-left:15px}@media(min-width:992px){.col-lg-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}}.table{width:100%;margin-bottom:1rem;background-color:#0000}.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6}.table thead th{vertical-align:bottom;border-bottom:2px solid #dee2e6}.table tbody+tbody{border-top:2px solid #dee2e6}.table .table{background-color:#fff}.table-sm td,.table-sm th{padding:.3rem}.btn{display:inline-block;font-weight:400;text-align:center;white-space:nowrap;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid #0000;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}@media screen and (prefers-reduced-motion:reduce){.btn{transition:none}}.btn:focus,.btn:hover{text-decoration:none}.btn:focus{outline:0;box-shadow:0 0 0 .2rem #007bff40}.btn:disabled{opacity:.65}.btn:not(:disabled):not(.disabled){cursor:pointer}.btn-light{color:#212529;background-color:#f8f9fa;border-color:#f8f9fa}.btn-light:hover{color:#212529;background-color:#e2e6ea;border-color:#dae0e5}.btn-light:focus{box-shadow:0 0 0 .2rem #f8f9fa80}.btn-light:disabled{color:#212529;background-color:#f8f9fa;border-color:#f8f9fa}.btn-light:not(:disabled):not(.disabled).active,.btn-light:not(:disabled):not(.disabled):active{color:#212529;background-color:#dae0e5;border-color:#d3d9df}.btn-light:not(:disabled):not(.disabled).active:focus,.btn-light:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem #f8f9fa80}.nav-link{display:block;padding:.5rem 1rem}.nav-link:focus,.nav-link:hover{text-decoration:none}.bg-light{background-color:#f8f9fa!important}.border-bottom{border-bottom:1px solid #dee2e6!important}.rounded-circle{border-radius:50%!important}.d-flex{display:-ms-flexbox!important;display:flex!important}.justify-content-center{-ms-flex-pack:center!important;justify-content:center!important}.mb-0{margin-bottom:0!important}.mt-1{margin-top:.25rem!important}.ml-1{margin-left:.25rem!important}.mr-2{margin-right:.5rem!important}.mt-3{margin-top:1rem!important}.mb-3{margin-bottom:1rem!important}.mt-4{margin-top:1.5rem!important}.mb-4{margin-bottom:1.5rem!important}.p-1{padding:.25rem!important}.pb-2{padding-bottom:.5rem!important}.p-3{padding:1rem!important}.pb-3{padding-bottom:1rem!important}.pl-3{padding-left:1rem!important}.text-center{text-align:center!important}@font-face{font-family:tabular-numbers;src:local(charter),local("bitstream charter"),local(cambria);unicode-range:U+0030-0039}@font-face{font-family:emoji;src:local("Apple Color Emoji"),local("Segoe UI Emoji"),local("Segoe UI Symbol"),local("Noto Color Emoji")}body{font-family:-apple-system,BlinkMacSystemFont,segoe ui,ubuntu,sans-serif,emoji;font-size:1.25rem}body,code,pre{color:#000}a{color:#0366d6}p,li,td,blockquote{font-family:charter,bitstream charter,tabular-numbers,georgia,serif,emoji}code,kbd,var{tab-size:2;white-space:nowrap}pre>code{white-space:pre}.lines-dense{line-height:1.2}.nav-link{display:inline-block;color:#000;padding:0}.inline-svg{display:inline-block;height:1.15rem;width:1.15rem;top:.15rem;position:relative}.inline-svg:hover,.inline-svg:focus{color:#0366d6}</style>
+</head>
+<body>
+<div class="container-fluid mt-3">
+<div class="row justify-content-center">
+<div class=col-lg-8>
+<div class="mb-3 ml-1 border-bottom pb-2 d-flex">
+<div class="mr-2 mt-1" width=64px><a aria-label=home href=/><img width=64 height=64 class=rounded-circle alt="picture of Nick Galbreath" src="data:image/jpeg;base64,/9j/2wCEAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDIBCQkJDAsMGA0NGDIhHCEyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMv/AABEIAEAAQAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/APXvPPy47VHKfMbNTCHJ6U77PjOeKpcqIfM0VBHThFmqOv6vHoVgJ2jMkjtsjTOMn3PpXD6p4/1SayMdjFBbTk8uSW49vQ1E8RCD5W9Talg6tVc0Vod1c6npllN5NxfW8UndWkAI&#43;vpViGWG4TzIJY5U/vRsGH6V863usX8crG8hBLHJbJO78earQa1cW863FjdTW8w7oxU/pSjUm91oaTw9OKspa&#43;Z7x4ssdUutJmNhfrZxxxSPKTHuLgKfl&#43;lUvDVpPceHdOe7ee5Bt49kZbYm3aMEgAZyPUn8Olcj4f8AiTc6haXGka48ZaaB0iutu35ipwGA9fUCu88OebL4Z0oZMaC0iHH3m&#43;QfkP1&#43;lXzGDjZHW9KN2eDVP7SPQ/gaPtWRgg1hzGqgzH8YaRDrFlaJNMY44Z/MkAON64ORntziuAvY/DbMyRzwpsO0lWxg/WtnXpJr6eWCS4IlRnVHR2QbSeFODjHA&#43;tYj6Je3FkbZziNh80bRrsz6&#43;9cNeSlK7Z6&#43;FhKnTOb1KxABa0mS4gPHUGuWuLWIsdgMTDqD0rvn8H6fawB5hiXGMxEoD&#43;VcpqukLDcokMkrM3Tc2cfnW2Hmr2TJxUXKN5JGOhkRwG7dGFfTPhi2z4U0cgjmyh7/AOwK&#43;eLzRLq0sRc7hIoGSyqR0OD164Jr0X4a&#43;N5pLKXTtTVnhtI18mZV5C9Ahx19vpXVzqSvE8yrT9n8Wh158UacpcPJIm3k7o2H9Kq3HjTS0jf7POJ3UE4XoPrXDeIdZawVYCN80inIDZK&#43;/Bz7/h71xsaTyt5vKxg/K3SocTSDuei3ZtbyZr6JXUSqCypK7LyPTt9K0rPVfNtWVFO2MY5HSsfwgJZdLuGuLwyss2Am/OBgf4/pUWsaultObdJFXP3ueorzKsW5uKPapTTppsj1fV5EhKAfPyeRXPWMrXV4Xl2u21gC5wMnimapqa3AIU89OO9Jo1sxEs86EQou7LiuulDlhd7nHWleoktjoo7GDUNLmsFuHWCFCGeMcuTzgdcD5R&#43;ddD4dtorXw1Z/Zrfyg9rlwsm3eSOWPB5rz3T/ABZBbXk0f2aJYpcL55XLAf06n866PSNU1G10mFftFu0LRAKsgdSq47FSPz61bw82rJ&#43;ZzTxMG7v0OHM5LsRIZHx88snJ6dOae93I58kvhTjgDtWasxSPaefpWjFpMt08P2O4jmMiBnwGHlHuGyP5ZrpaS1ZhGbekSGK6e1nd4rmSPPDbGIz/AI10um6Lpuvbp7a5naaIDzUkOeT3Htwaxrrw/wDYbS4nnuR&#43;7X5Qq53Hn&#43;oH51e8Cawy&#43;LT9qKsb1DGW2hRv6g4HrjH41lWXNTc4PVGtGbhUUZrRnS2nheCKTcybiDWL43vBY28WmwfK0g3Pj&#43;7/APX/AKV6ZL5NravNKypGil2Y9gOteEa3qb6xq9xevkB2&#43;RT/AAqOg/KuPBKVWpzS2R2Y6qqdPljuzPrs9C12e10WNJnuGton2ttfcFBPAIzxXGVq6Drk2h3bSpGksTrtkjb&#43;IfXtXrtXR4h//9k=">
+</a></div>
+<div>
+<div class="h4 mb-0"><a class=nav-link href=/>Nick Galbreath</a></div>
+<div class="small lines-dense">CTO and co-founder of <a class=nav-link href=https://www.signalsciences.com/>Signal Sciences</a>. Author and <a class=nav-link href=/tags/presentations>speaker</a> on software engineering, devops, and security.
+</div>
+</div>
+</div>
+<article><h1 itemprop=title class=h2>Using Subresource Integrity to Secure Externally Hosted Content</h1>
+<div itemprop=subheading class="lines-dense pb-2"></div>
+<div class="small pb-3 byline">
+<a itemprop=author class=nav-link href=/>Nick Galbreath</a> &#x00b7; <time itemprop=pubdate datetime=2016-02-29T00:00:00Z>February 29, 2016</time>
+</div>
+<p>One simple trick that can prevent you from distributing malware or aiding a DDoS attack from your CDN.</p>
+<p>Many CDNs provide hosting of common JavaScript libraries and CSS
+frameworks. Everyone loves using them since it&rsquo;s basically free
+hosting and free performance. But since you don&rsquo;t control the CDN or
+the content it is hosting, it&rsquo;s possible the content could be
+compromised and is sending data that harms you or your customers.
+Sound crazy? It&rsquo;s happened before.</p>
+<ul>
+<li>The CDN itself it compromised and is sending malicious content.
+Fortunately I&rsquo;m not aware of any examples here, but if it happened,
+it would be a very bad day for the Internet.</li>
+<li>The Origin is compromised and bad data is uploaded to the CDN. A
+variation of this happened recently with <a href="http://blog.linuxmint.com/?p=2994">Mint
+Linux</a>.</li>
+<li>A MITM attack (with or without TLS) that intercepts and alters
+externally hosted data mid-stream. This is how the <a href=https://en.wikipedia.org/wiki/Great_Cannon>Great
+Cannon</a> was able to
+<a href=http://arstechnica.com/security/2015/03/github-battles-largest-ddos-in-sites-history-targeted-at-anti-censorship-tools/>cripple GitHub in March 2015</a>.</li>
+</ul>
+<p><a href=http://www.w3.org/TR/SRI/>Subresource integrity</a> is easy to add and
+prevents most if not all cases above. You add the appropriate
+cryptographic hash to your <code>script</code> and <code>link</code> tags that point to your
+CDN. If the data downloaded doesn&rsquo;t match the hash, the data is
+discarded. Your site might break, but you also won&rsquo;t be distributing
+malware or unintentionally aiding DDoS attack.</p>
+<p>Here&rsquo;s a sample from
+<a href=http://getbootstrap.com/getting-started/#download>getbootstrap.com</a>
+(This is actually how I found out subresource integrity in the first
+place).</p>
+<pre><code class=language-html>&lt;link rel=&quot;stylesheet&quot;
+      href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css&quot;
+      integrity=&quot;sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7&quot;
+      crossorigin=&quot;anonymous&quot;&gt;
+</code></pre>
+<p>The <code>integrity</code> attribute contains the cryptographic hash and
+<code>crossorigin</code> attribute is for <a href=https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS>CORS</a>. Much more detail can be found in
+the <a href=https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity>Mozilla Developer
+Network</a>.
+It&rsquo;s so simple and so effective, it&rsquo;s amazing it wasn&rsquo;t developed
+years ago.</p>
+<p>It would be fantastic if the CDNs started to publish SHA-384 hashes of
+the content they are hosting. I suspect in time they will. Until
+then, there are a number of ways to add subresource integrity hashes:</p>
+<ul>
+<li>Using the online tool <a href=https://www.srihash.org>srihash</a></li>
+<li>Manually using <code>cat FILENAME.js | openssl dgst -sha384 -binary | openssl enc -base64 -A</code> (accordiing to <a href=https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity>developer.mozilla.org</a></li>
+<li>Automatically with a number of tools. See the <a href=https://github.com/w3c/webappsec-subresource-integrity/wiki/Links>subresource integrity wiki</a> for details.</li>
+</ul>
+<p>According to
+<a href="http://caniuse.com/#feat=subresource-integrity">caniuse.com</a>, as of
+2016-02-29, somewhere between 40-50% of all web browsers supports
+subresouce integrity. If you add subresource integrity tags, be sure
+to test in either the latest Chrome or Firefox browsers. Sadly
+<a href="https://bugs.webkit.org/show_bug.cgi?id=148363">Safari</a> and
+<a href=https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/6263699-subresource-integrity>IE</a>
+do not support it yet.</p>
+<p>It is good to know if a subresource integrity checks fails. <a href=https://frederik-braun.com/using-subresource-integrity.html>Frederik
+Braun</a>
+wrote up some tips on how to check and report failures (he&rsquo;s also one
+of the editors of the
+<a href=https://w3c.github.io/webappsec-subresource-integrity/>specification</a>).
+It&rsquo;s not clear to me if on failure an <code>event</code> is created or not.</p>
+<p>While this is mostly focused on CDNs hosting <em>external</em> content, it&rsquo;s
+also valuable if you are using a CDN to host your own content. The
+authenication mechanisms to deploy to your web site and deploy to a
+CDN are different. With SRI, you can detect possible compromise.
+Considering how easy it is to add, and given the severity of the
+issues it prevents, there is very little reason not to add subresource
+integrity attributes.</p>
+<h3 id=link-farm>Link Farm</h3>
+<ul>
+<li><a href=https://w3c.github.io/webappsec-subresource-integrity/>W3C Specification</a></li>
+<li><a href=https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity>Mozilla Developer Network</a></li>
+<li><a href=https://frederik-braun.com/using-subresource-integrity.html>A CDN that can not XSS you: Using Subresource Integrity</a></li>
+<li><a href=http://githubengineering.com/subresource-integrity/>GitHub Engineering: Subresource Integrity</a></li>
+<li><a href=https://www.chromestatus.com/feature/6183089948590080>Chrome Platform Status: Subresource Integrity</a></li>
+</ul>
+</article>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Using Subresource Integrity to Secure Externally Hosted Content","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.client9.com/article/using-subresource-integrity-to-secure-externally-hosted-content/"},"author":{"@type":"Person","name":"Nick Galbreath"},"publisher":{"@type":"Organization","name":"Nick Galbreath"},"datePublished":"2016-02-29T00:00:00Z"}</script>
+<hr>
+<div class="small text-center mb-3">&copy; 2018 Nick Galbreath</div>
+</div></div></div>
+</body>
+</html>

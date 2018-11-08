@@ -1,0 +1,156 @@
+<!doctype html><html lang=en>
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,minimum-scale=1,initial-scale=1">
+<title>CSS System Fonts on Linux 2018 | Nick Galbreath</title>
+<meta property=og:site_name content="Nick Galbreath">
+<meta property=og:type content=article>
+<meta property=og:title content="CSS System Fonts on Linux 2018">
+<meta property=og:description content="What are cross-platform system fonts on Linux, and does it make sense to use them in CSS?">
+<meta property=og:url content=https://www.client9.com/css-system-fonts-on-linux-2018/>
+<meta property=og:locale content=en>
+<meta property=article:published_time content=2018-03-29T19:40:48Z>
+<meta name=twitter:card content=summary>
+<meta name=twitter:site content=NGalbreath>
+<meta name=twitter:creator content=NGalbreath>
+<meta name=description content="What are cross-platform system fonts on Linux, and does it make sense to use them in CSS?">
+<meta name=format-detection content="telephone=no">
+<meta name=generator content="Hugo 0.51">
+<link rel=canonical href=https://www.client9.com/css-system-fonts-on-linux-2018/>
+<style>/*!* Bootstrap v4.1.3 (https://getbootstrap.com/)
+* Copyright 2011-2018 The Bootstrap Authors
+* Copyright 2011-2018 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)*/*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:#0000}@-ms-viewport{width:device-width}article,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}blockquote{margin:0 0 1rem}strong{font-weight:bolder}a{color:#007bff;text-decoration:none;background-color:#0000;-webkit-text-decoration-skip:objects}a:hover{color:#0056b3;text-decoration:underline}a:not([href]):not([tabindex]){color:inherit;text-decoration:none}a:not([href]):not([tabindex]):focus,a:not([href]):not([tabindex]):hover{color:inherit;text-decoration:none}a:not([href]):not([tabindex]):focus{outline:0}code,pre{font-family:SFMono-Regular,Menlo,Monaco,Consolas,liberation mono,courier new,monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto;-ms-overflow-style:scrollbar}img{vertical-align:middle;border-style:none}table{border-collapse:collapse}th{text-align:inherit}.h2,.h4,.h5,h1,h2,h3{margin-bottom:.5rem;font-family:inherit;font-weight:500;line-height:1.2;color:inherit}h1{font-size:2.5rem}.h2,h2{font-size:2rem}h3{font-size:1.75rem}.h4{font-size:1.5rem}.h5{font-size:1.25rem}hr{margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid #0000001a}.small{font-size:80%;font-weight:400}code{font-size:87.5%;color:#e83e8c;word-break:break-word}a>code{color:inherit}pre{display:block;font-size:87.5%;color:#212529}pre code{font-size:inherit;color:inherit;word-break:normal}.container-fluid{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.col-lg-8{position:relative;width:100%;min-height:1px;padding-right:15px;padding-left:15px}@media(min-width:992px){.col-lg-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}}.table{width:100%;margin-bottom:1rem;background-color:#0000}.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6}.table thead th{vertical-align:bottom;border-bottom:2px solid #dee2e6}.table tbody+tbody{border-top:2px solid #dee2e6}.table .table{background-color:#fff}.table-sm td,.table-sm th{padding:.3rem}.btn{display:inline-block;font-weight:400;text-align:center;white-space:nowrap;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid #0000;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}@media screen and (prefers-reduced-motion:reduce){.btn{transition:none}}.btn:focus,.btn:hover{text-decoration:none}.btn:focus{outline:0;box-shadow:0 0 0 .2rem #007bff40}.btn:disabled{opacity:.65}.btn:not(:disabled):not(.disabled){cursor:pointer}.btn-light{color:#212529;background-color:#f8f9fa;border-color:#f8f9fa}.btn-light:hover{color:#212529;background-color:#e2e6ea;border-color:#dae0e5}.btn-light:focus{box-shadow:0 0 0 .2rem #f8f9fa80}.btn-light:disabled{color:#212529;background-color:#f8f9fa;border-color:#f8f9fa}.btn-light:not(:disabled):not(.disabled).active,.btn-light:not(:disabled):not(.disabled):active{color:#212529;background-color:#dae0e5;border-color:#d3d9df}.btn-light:not(:disabled):not(.disabled).active:focus,.btn-light:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem #f8f9fa80}.nav-link{display:block;padding:.5rem 1rem}.nav-link:focus,.nav-link:hover{text-decoration:none}.bg-light{background-color:#f8f9fa!important}.border-bottom{border-bottom:1px solid #dee2e6!important}.rounded-circle{border-radius:50%!important}.d-flex{display:-ms-flexbox!important;display:flex!important}.justify-content-center{-ms-flex-pack:center!important;justify-content:center!important}.mb-0{margin-bottom:0!important}.mt-1{margin-top:.25rem!important}.ml-1{margin-left:.25rem!important}.mr-2{margin-right:.5rem!important}.mt-3{margin-top:1rem!important}.mb-3{margin-bottom:1rem!important}.mt-4{margin-top:1.5rem!important}.mb-4{margin-bottom:1.5rem!important}.p-1{padding:.25rem!important}.pb-2{padding-bottom:.5rem!important}.p-3{padding:1rem!important}.pb-3{padding-bottom:1rem!important}.pl-3{padding-left:1rem!important}.text-center{text-align:center!important}@font-face{font-family:tabular-numbers;src:local(charter),local("bitstream charter"),local(cambria);unicode-range:U+0030-0039}@font-face{font-family:emoji;src:local("Apple Color Emoji"),local("Segoe UI Emoji"),local("Segoe UI Symbol"),local("Noto Color Emoji")}body{font-family:-apple-system,BlinkMacSystemFont,segoe ui,ubuntu,sans-serif,emoji;font-size:1.25rem}body,code,pre{color:#000}a{color:#0366d6}p,li,td,blockquote{font-family:charter,bitstream charter,tabular-numbers,georgia,serif,emoji}code,kbd,var{tab-size:2;white-space:nowrap}pre>code{white-space:pre}.lines-dense{line-height:1.2}.nav-link{display:inline-block;color:#000;padding:0}.inline-svg{display:inline-block;height:1.15rem;width:1.15rem;top:.15rem;position:relative}.inline-svg:hover,.inline-svg:focus{color:#0366d6}</style>
+</head>
+<body>
+<div class="container-fluid mt-3">
+<div class="row justify-content-center">
+<div class=col-lg-8>
+<div class="mb-3 ml-1 border-bottom pb-2 d-flex">
+<div class="mr-2 mt-1" width=64px><a aria-label=home href=/><img width=64 height=64 class=rounded-circle alt="picture of Nick Galbreath" src="data:image/jpeg;base64,/9j/2wCEAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDIBCQkJDAsMGA0NGDIhHCEyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMv/AABEIAEAAQAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/APXvPPy47VHKfMbNTCHJ6U77PjOeKpcqIfM0VBHThFmqOv6vHoVgJ2jMkjtsjTOMn3PpXD6p4/1SayMdjFBbTk8uSW49vQ1E8RCD5W9Talg6tVc0Vod1c6npllN5NxfW8UndWkAI&#43;vpViGWG4TzIJY5U/vRsGH6V863usX8crG8hBLHJbJO78earQa1cW863FjdTW8w7oxU/pSjUm91oaTw9OKspa&#43;Z7x4ssdUutJmNhfrZxxxSPKTHuLgKfl&#43;lUvDVpPceHdOe7ee5Bt49kZbYm3aMEgAZyPUn8Olcj4f8AiTc6haXGka48ZaaB0iutu35ipwGA9fUCu88OebL4Z0oZMaC0iHH3m&#43;QfkP1&#43;lXzGDjZHW9KN2eDVP7SPQ/gaPtWRgg1hzGqgzH8YaRDrFlaJNMY44Z/MkAON64ORntziuAvY/DbMyRzwpsO0lWxg/WtnXpJr6eWCS4IlRnVHR2QbSeFODjHA&#43;tYj6Je3FkbZziNh80bRrsz6&#43;9cNeSlK7Z6&#43;FhKnTOb1KxABa0mS4gPHUGuWuLWIsdgMTDqD0rvn8H6fawB5hiXGMxEoD&#43;VcpqukLDcokMkrM3Tc2cfnW2Hmr2TJxUXKN5JGOhkRwG7dGFfTPhi2z4U0cgjmyh7/AOwK&#43;eLzRLq0sRc7hIoGSyqR0OD164Jr0X4a&#43;N5pLKXTtTVnhtI18mZV5C9Ahx19vpXVzqSvE8yrT9n8Wh158UacpcPJIm3k7o2H9Kq3HjTS0jf7POJ3UE4XoPrXDeIdZawVYCN80inIDZK&#43;/Bz7/h71xsaTyt5vKxg/K3SocTSDuei3ZtbyZr6JXUSqCypK7LyPTt9K0rPVfNtWVFO2MY5HSsfwgJZdLuGuLwyss2Am/OBgf4/pUWsaultObdJFXP3ueorzKsW5uKPapTTppsj1fV5EhKAfPyeRXPWMrXV4Xl2u21gC5wMnimapqa3AIU89OO9Jo1sxEs86EQou7LiuulDlhd7nHWleoktjoo7GDUNLmsFuHWCFCGeMcuTzgdcD5R&#43;ddD4dtorXw1Z/Zrfyg9rlwsm3eSOWPB5rz3T/ABZBbXk0f2aJYpcL55XLAf06n866PSNU1G10mFftFu0LRAKsgdSq47FSPz61bw82rJ&#43;ZzTxMG7v0OHM5LsRIZHx88snJ6dOae93I58kvhTjgDtWasxSPaefpWjFpMt08P2O4jmMiBnwGHlHuGyP5ZrpaS1ZhGbekSGK6e1nd4rmSPPDbGIz/AI10um6Lpuvbp7a5naaIDzUkOeT3Htwaxrrw/wDYbS4nnuR&#43;7X5Qq53Hn&#43;oH51e8Cawy&#43;LT9qKsb1DGW2hRv6g4HrjH41lWXNTc4PVGtGbhUUZrRnS2nheCKTcybiDWL43vBY28WmwfK0g3Pj&#43;7/APX/AKV6ZL5NravNKypGil2Y9gOteEa3qb6xq9xevkB2&#43;RT/AAqOg/KuPBKVWpzS2R2Y6qqdPljuzPrs9C12e10WNJnuGton2ttfcFBPAIzxXGVq6Drk2h3bSpGksTrtkjb&#43;IfXtXrtXR4h//9k=">
+</a></div>
+<div>
+<div class="h4 mb-0"><a class=nav-link href=/>Nick Galbreath</a></div>
+<div class="small lines-dense">CTO and co-founder of <a class=nav-link href=https://www.signalsciences.com/>Signal Sciences</a>. Author and <a class=nav-link href=/tags/presentations>speaker</a> on software engineering, devops, and security.
+</div>
+</div>
+</div>
+<article><h1 itemprop=title class=h2>CSS System Fonts on Linux 2018</h1>
+<div itemprop=subheading class="lines-dense pb-2">What are cross-platform system fonts on Linux, and does it make sense to use them in CSS?</div>
+<div class="small pb-3 byline">
+<a itemprop=author class=nav-link href=/>Nick Galbreath</a> &#x00b7; <time itemprop=pubdate datetime=2018-03-29T19:40:48Z>March 29, 2018</time>
+</div>
+<p>I’ve been working on CSS native font stacks as way of delivering the best reading experience in the shortest amount of page-load time. Apple and Windows are mostly straightforward. But what about Linux? To find out, I fired up the default desktop versions of:</p>
+<ul>
+<li><a href=https://getfedora.org>Fedora</a> 28 (pre-release)</li>
+<li><a href=https://www.ubuntu.com>Ubuntu</a> 18.04 (pre-release)</li>
+<li><a href=https://linuxmint.com>Mint Linux</a> 18.3</li>
+<li><a href=https://elementary.io>Elementary.io</a> (early 2018)</li>
+</ul>
+<p>and the ran the following and analyzed the results.</p>
+<pre class="p-1 pl-3 lines-dense"><code>fc-list -f &#39;%{family[0]}\n&#39; | sort -u</code></pre>
+<h2 id=h.hy3qvyv8klb9 class="h4 mt-4 mb-4">What’s Installed</h2>
+<p>These generic fonts were installed on all systems:</p>
+<ul>
+<li><code>Nimbus Roman</code>, <code>FreeSerif</code>, <code>Liberation Serif</code> are all replicas of Times New Roman.</li>
+<li><code>Nimbus Sans</code>, <code>FreeSans</code>, <code>Liberation Sans</code> are all replicas of Helvetica.</li>
+<li><code>Nimbus Mono</code> and <code>FreeMono</code> are clones of Courier New.</li>
+<li><code>DejaVu Sans</code>, <code>DejaVu Serif</code>, <code>DejaVu Mono</code> are often the default browser font. They are much larger in width and height than the ones listed previously.</li>
+</ul>
+<p>There is little need to ever use these in CSS since they are the default. Beyond that are few cross-system Linux fonts. However are some are definitely useful. Below is a table of the most interesting additional fonts:</p>
+<table class="table table-sm">
+<thead>
+<tr>
+<th>CSS Font Name</th>
+<th>Face</th>
+<th>Default on:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=https://en.wikipedia.org/wiki/Liberation_fonts>Liberation Mono</a></td>
+<td>mono</td>
+<td>all</td>
+</tr>
+<tr>
+<td><a href=https://en.wikipedia.org/wiki/Bitstream_Charter>Bitstream Charter</a></td>
+<td>serif</td>
+<td>Ubuntu</td>
+</tr>
+<tr>
+<td><a href=https://en.wikipedia.org/wiki/Palatino>URW Palladio L</a></td>
+<td>serif</td>
+<td>Ubuntu</td>
+</tr>
+<tr>
+<td><a href=https://design.ubuntu.com/font/>Ubuntu</a></td>
+<td>sans-serif</td>
+<td>Ubuntu</td>
+</tr>
+<tr>
+<td><a href=https://fonts.google.com/specimen/Ubuntu%2BMono>Ubuntu Mono</a></td>
+<td>mono</td>
+<td>Ubuntu</td>
+</tr>
+<tr>
+<td><a href=https://www.google.com/get/noto/%23mono-mono>Noto Mono</a></td>
+<td>mono</td>
+<td>Ubuntu</td>
+</tr>
+<tr>
+<td><a href=https://fontlibrary.org/en/font/caladea>Caladea</a> </td>
+<td>serif</td>
+<td>Fedora</td>
+</tr>
+<tr>
+<td><a href=https://fonts.google.com/specimen/Cantarell>Cantarell</a></td>
+<td>sans-serif</td>
+<td>Fedora</td>
+</tr>
+<tr>
+<td><a href=http://montserrat.zkysky.com.ar/en>Montserrat</a></td>
+<td>sans-serif</td>
+<td>Fedora</td>
+</tr>
+<tr>
+<td><a href=https://fonts.google.com/specimen/Noto%2BSerif>Noto Serif</a></td>
+<td>serif</td>
+<td>some Ubuntu</td>
+</tr>
+<tr>
+<td><a href=https://www.google.com/get/noto/help/emoji/>Noto Color Emoji</a> </td>
+<td>emoji</td>
+<td>Ubuntu 18.04, Fedora 28 only</td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ul>
+<li><code>Liberation Mono</code> is installed on all tested linux systems. It’s metric-compatible with Courier New but looks like Apple <a href=https://en.wikipedia.org/wiki/Menlo_(typeface)>Menlo</a> or the <code>DejaVu Mono</code> (above). It’s also about the same size a Consolas on windows.</li>
+<li><code>URW Palladio L</code> is a clone of Pallatino, which is a system font on macOS and Windows. While definitely usable on the screen, it is maybe most useful for printing.</li>
+<li><code>Bitstream Charter</code> is the preginitor of <code>Georgia</code>. Is it is also a system font on macOS. <a href=https://practicaltypography.com/charter.html>Practical Typography</a> has a nice history of this font as well.</li>
+<li><code>Ubuntu</code> (the typeface) and <code>Ubuntu Mono</code> are the OS system fonts for Ubuntu and Ubuntu-like systems. The monospace version is more dense and smaller than other monospace fonts.</li>
+<li><code>Noto Mono</code> is installed on all Ubuntu systems. Oddly it’s a google font, but not hosted on <a href=https://fonts.google.com/>fonts.google.com</a>.</li>
+<li><code>Caladea</code> is a clone of the Microsoft font <a href=https://docs.microsoft.com/en-us/typography/font-list/cambria>Cambria</a>.</li>
+<li><code>Cantarell</code> is the OS System font for GNOME/Fedora.</li>
+<li><code>Montserrat</code> is very nice sans-serif font for Fedora. It’s used for <a href=https://fedoraproject.org/wiki/Montserrat_Fonts>Fedora marketing</a>.</li>
+<li>Oddly, <code>Noto Serif</code> is not on Ubuntu 18.04 but is available on the Mint and Elementary (which are based on ubuntu or debian).</li>
+<li>And yes, you read the table correctly, only the latest Ubuntu and Fedora have color emoji. Before that it’s only black-and-white versions.</li>
+</ul>
+<p>Most of these fonts, if not already present, can be installed by the end-user using the package manager of the OS. In addition, <code>Ubuntu</code>, <code>Noto Serif</code>, <code>Cambria</code>, <code>Cantarell</code>, and <code>Montserrat</code> are are all hosted as web fonts on <a href=https://fonts.google.com/>fonts.google.com</a>.</p>
+<h2 id=h.sbdckospmo5b class="h4 mt-4 mb-4">Conclusions and Opinions</h2>
+<p>The good news is there are good system fonts for monospace. Adding <code>Liberation Mono</code> to your font stack will prevent some horrible Courier New clone from being used on Linux. Since it’s the about the same size as the system fonts on Windows and macOS, it should blend in well. <code>Noto Mono</code> is a good alternative as well.</p>
+<p>For sans-serif fonts, the choice is less obvious. <code>DejaVu Sans</code> is often a default but I find it a bit large and clunky. <code>Liberation Sans</code> is option, although not that exciting. The <code>Ubuntu</code> font is quite distinctive, and I find <code>Cantarell</code> questionable, but they might work for your stacks. <code>Montserrat</code> is very nice, but is Fedora only.</p>
+<p>For serif typefaces, the choices are slim. Fortunately <code>Bitstream Charter</code> is a good substitute for <code>Georgia</code> on Ubuntu systems. And <code>Caladea</code> on Fedora systems is a good alternative.</p>
+<p>And emoji. Since Ubuntu 18.04 added <a href=https://www.google.com/get/noto/help/emoji/>Noto Color Emoji</a> it’s expected the respins will add it shortly as well. For Fedora, while <a href=https://bugzilla.redhat.com/show_bug.cgi?id%3D1496761>Bug 1496761</a> makes it very clear Fedora will not be using Noto for emoji, my pre-release version has it installed. Either way, it makes sense to add this to your color emoji stack.</p>
+<p>There is one other choice. Given the low volume of traffic, the limited choices for system fonts, and diversity of distributions, perhaps using a web font as fall back is the best option for Linux.</p>
+</article>
+<div>
+<a class="btn btn-light" href=/tags/webdev>webdev</a>
+</div>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"CSS System Fonts on Linux 2018","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.client9.com/css-system-fonts-on-linux-2018/"},"author":{"@type":"Person","name":"Nick Galbreath"},"publisher":{"@type":"Organization","name":"Nick Galbreath"},"datePublished":"2018-03-29T19:40:48Z"}</script>
+<hr>
+<div class="small text-center mb-3">&copy; 2018 Nick Galbreath</div>
+</div></div></div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html><html lang=en>
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,minimum-scale=1,initial-scale=1">
+<title>Using Font Awesome Icons in Hugo | Nick Galbreath</title>
+<meta property=og:site_name content="Nick Galbreath">
+<meta property=og:type content=article>
+<meta property=og:title content="Using Font Awesome Icons in Hugo">
+<meta property=og:description content="If you just need a icon or two for your website, you can directly embed the icons you need and skip with network. Here’s how.">
+<meta property=og:url content=https://www.client9.com/using-font-awesome-icons-in-hugo/>
+<meta property=og:locale content=en>
+<meta property=article:published_time content=2018-04-13T05:23:08Z>
+<meta name=twitter:card content=summary>
+<meta name=twitter:site content=NGalbreath>
+<meta name=twitter:creator content=NGalbreath>
+<meta name=description content="If you just need a icon or two for your website, you can directly embed the icons you need and skip with network. Here’s how.">
+<meta name=format-detection content="telephone=no">
+<meta name=generator content="Hugo 0.51">
+<link rel=canonical href=https://www.client9.com/using-font-awesome-icons-in-hugo/>
+<style>/*!* Bootstrap v4.1.3 (https://getbootstrap.com/)
+* Copyright 2011-2018 The Bootstrap Authors
+* Copyright 2011-2018 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)*/*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:#0000}@-ms-viewport{width:device-width}article,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}blockquote{margin:0 0 1rem}strong{font-weight:bolder}a{color:#007bff;text-decoration:none;background-color:#0000;-webkit-text-decoration-skip:objects}a:hover{color:#0056b3;text-decoration:underline}a:not([href]):not([tabindex]){color:inherit;text-decoration:none}a:not([href]):not([tabindex]):focus,a:not([href]):not([tabindex]):hover{color:inherit;text-decoration:none}a:not([href]):not([tabindex]):focus{outline:0}code,pre{font-family:SFMono-Regular,Menlo,Monaco,Consolas,liberation mono,courier new,monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto;-ms-overflow-style:scrollbar}img{vertical-align:middle;border-style:none}table{border-collapse:collapse}th{text-align:inherit}.h2,.h4,.h5,h1,h2,h3{margin-bottom:.5rem;font-family:inherit;font-weight:500;line-height:1.2;color:inherit}h1{font-size:2.5rem}.h2,h2{font-size:2rem}h3{font-size:1.75rem}.h4{font-size:1.5rem}.h5{font-size:1.25rem}hr{margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid #0000001a}.small{font-size:80%;font-weight:400}code{font-size:87.5%;color:#e83e8c;word-break:break-word}a>code{color:inherit}pre{display:block;font-size:87.5%;color:#212529}pre code{font-size:inherit;color:inherit;word-break:normal}.container-fluid{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.col-lg-8{position:relative;width:100%;min-height:1px;padding-right:15px;padding-left:15px}@media(min-width:992px){.col-lg-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}}.table{width:100%;margin-bottom:1rem;background-color:#0000}.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6}.table thead th{vertical-align:bottom;border-bottom:2px solid #dee2e6}.table tbody+tbody{border-top:2px solid #dee2e6}.table .table{background-color:#fff}.table-sm td,.table-sm th{padding:.3rem}.btn{display:inline-block;font-weight:400;text-align:center;white-space:nowrap;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid #0000;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}@media screen and (prefers-reduced-motion:reduce){.btn{transition:none}}.btn:focus,.btn:hover{text-decoration:none}.btn:focus{outline:0;box-shadow:0 0 0 .2rem #007bff40}.btn:disabled{opacity:.65}.btn:not(:disabled):not(.disabled){cursor:pointer}.btn-light{color:#212529;background-color:#f8f9fa;border-color:#f8f9fa}.btn-light:hover{color:#212529;background-color:#e2e6ea;border-color:#dae0e5}.btn-light:focus{box-shadow:0 0 0 .2rem #f8f9fa80}.btn-light:disabled{color:#212529;background-color:#f8f9fa;border-color:#f8f9fa}.btn-light:not(:disabled):not(.disabled).active,.btn-light:not(:disabled):not(.disabled):active{color:#212529;background-color:#dae0e5;border-color:#d3d9df}.btn-light:not(:disabled):not(.disabled).active:focus,.btn-light:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem #f8f9fa80}.nav-link{display:block;padding:.5rem 1rem}.nav-link:focus,.nav-link:hover{text-decoration:none}.bg-light{background-color:#f8f9fa!important}.border-bottom{border-bottom:1px solid #dee2e6!important}.rounded-circle{border-radius:50%!important}.d-flex{display:-ms-flexbox!important;display:flex!important}.justify-content-center{-ms-flex-pack:center!important;justify-content:center!important}.mb-0{margin-bottom:0!important}.mt-1{margin-top:.25rem!important}.ml-1{margin-left:.25rem!important}.mr-2{margin-right:.5rem!important}.mt-3{margin-top:1rem!important}.mb-3{margin-bottom:1rem!important}.mt-4{margin-top:1.5rem!important}.mb-4{margin-bottom:1.5rem!important}.p-1{padding:.25rem!important}.pb-2{padding-bottom:.5rem!important}.p-3{padding:1rem!important}.pb-3{padding-bottom:1rem!important}.pl-3{padding-left:1rem!important}.text-center{text-align:center!important}@font-face{font-family:tabular-numbers;src:local(charter),local("bitstream charter"),local(cambria);unicode-range:U+0030-0039}@font-face{font-family:emoji;src:local("Apple Color Emoji"),local("Segoe UI Emoji"),local("Segoe UI Symbol"),local("Noto Color Emoji")}body{font-family:-apple-system,BlinkMacSystemFont,segoe ui,ubuntu,sans-serif,emoji;font-size:1.25rem}body,code,pre{color:#000}a{color:#0366d6}p,li,td,blockquote{font-family:charter,bitstream charter,tabular-numbers,georgia,serif,emoji}code,kbd,var{tab-size:2;white-space:nowrap}pre>code{white-space:pre}.lines-dense{line-height:1.2}.nav-link{display:inline-block;color:#000;padding:0}.inline-svg{display:inline-block;height:1.15rem;width:1.15rem;top:.15rem;position:relative}.inline-svg:hover,.inline-svg:focus{color:#0366d6}</style>
+</head>
+<body>
+<div class="container-fluid mt-3">
+<div class="row justify-content-center">
+<div class=col-lg-8>
+<div class="mb-3 ml-1 border-bottom pb-2 d-flex">
+<div class="mr-2 mt-1" width=64px><a aria-label=home href=/><img width=64 height=64 class=rounded-circle alt="picture of Nick Galbreath" src="data:image/jpeg;base64,/9j/2wCEAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDIBCQkJDAsMGA0NGDIhHCEyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMv/AABEIAEAAQAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/APXvPPy47VHKfMbNTCHJ6U77PjOeKpcqIfM0VBHThFmqOv6vHoVgJ2jMkjtsjTOMn3PpXD6p4/1SayMdjFBbTk8uSW49vQ1E8RCD5W9Talg6tVc0Vod1c6npllN5NxfW8UndWkAI&#43;vpViGWG4TzIJY5U/vRsGH6V863usX8crG8hBLHJbJO78earQa1cW863FjdTW8w7oxU/pSjUm91oaTw9OKspa&#43;Z7x4ssdUutJmNhfrZxxxSPKTHuLgKfl&#43;lUvDVpPceHdOe7ee5Bt49kZbYm3aMEgAZyPUn8Olcj4f8AiTc6haXGka48ZaaB0iutu35ipwGA9fUCu88OebL4Z0oZMaC0iHH3m&#43;QfkP1&#43;lXzGDjZHW9KN2eDVP7SPQ/gaPtWRgg1hzGqgzH8YaRDrFlaJNMY44Z/MkAON64ORntziuAvY/DbMyRzwpsO0lWxg/WtnXpJr6eWCS4IlRnVHR2QbSeFODjHA&#43;tYj6Je3FkbZziNh80bRrsz6&#43;9cNeSlK7Z6&#43;FhKnTOb1KxABa0mS4gPHUGuWuLWIsdgMTDqD0rvn8H6fawB5hiXGMxEoD&#43;VcpqukLDcokMkrM3Tc2cfnW2Hmr2TJxUXKN5JGOhkRwG7dGFfTPhi2z4U0cgjmyh7/AOwK&#43;eLzRLq0sRc7hIoGSyqR0OD164Jr0X4a&#43;N5pLKXTtTVnhtI18mZV5C9Ahx19vpXVzqSvE8yrT9n8Wh158UacpcPJIm3k7o2H9Kq3HjTS0jf7POJ3UE4XoPrXDeIdZawVYCN80inIDZK&#43;/Bz7/h71xsaTyt5vKxg/K3SocTSDuei3ZtbyZr6JXUSqCypK7LyPTt9K0rPVfNtWVFO2MY5HSsfwgJZdLuGuLwyss2Am/OBgf4/pUWsaultObdJFXP3ueorzKsW5uKPapTTppsj1fV5EhKAfPyeRXPWMrXV4Xl2u21gC5wMnimapqa3AIU89OO9Jo1sxEs86EQou7LiuulDlhd7nHWleoktjoo7GDUNLmsFuHWCFCGeMcuTzgdcD5R&#43;ddD4dtorXw1Z/Zrfyg9rlwsm3eSOWPB5rz3T/ABZBbXk0f2aJYpcL55XLAf06n866PSNU1G10mFftFu0LRAKsgdSq47FSPz61bw82rJ&#43;ZzTxMG7v0OHM5LsRIZHx88snJ6dOae93I58kvhTjgDtWasxSPaefpWjFpMt08P2O4jmMiBnwGHlHuGyP5ZrpaS1ZhGbekSGK6e1nd4rmSPPDbGIz/AI10um6Lpuvbp7a5naaIDzUkOeT3Htwaxrrw/wDYbS4nnuR&#43;7X5Qq53Hn&#43;oH51e8Cawy&#43;LT9qKsb1DGW2hRv6g4HrjH41lWXNTc4PVGtGbhUUZrRnS2nheCKTcybiDWL43vBY28WmwfK0g3Pj&#43;7/APX/AKV6ZL5NravNKypGil2Y9gOteEa3qb6xq9xevkB2&#43;RT/AAqOg/KuPBKVWpzS2R2Y6qqdPljuzPrs9C12e10WNJnuGton2ttfcFBPAIzxXGVq6Drk2h3bSpGksTrtkjb&#43;IfXtXrtXR4h//9k=">
+</a></div>
+<div>
+<div class="h4 mb-0"><a class=nav-link href=/>Nick Galbreath</a></div>
+<div class="small lines-dense">CTO and co-founder of <a class=nav-link href=https://www.signalsciences.com/>Signal Sciences</a>. Author and <a class=nav-link href=/tags/presentations>speaker</a> on software engineering, devops, and security.
+</div>
+</div>
+</div>
+<article><h1 itemprop=title class=h2>Using Font Awesome Icons in Hugo</h1>
+<div itemprop=subheading class="lines-dense pb-2">If you just need a icon or two for your website, you can directly embed the icons you need and skip with network. Here’s how.</div>
+<div class="small pb-3 byline">
+<a itemprop=author class=nav-link href=/>Nick Galbreath</a> &#x00b7; <time itemprop=pubdate datetime=2018-04-13T05:23:08Z>April 13, 2018</time>
+</div>
+<p>Icons are now essential for websites. According to <a href=https://fontawesome.com>Font Awesome</a>, it’s icons are used in 100M websites. Traditional methods for using icons can involve loading a web font, a sprite, or script. That’s a lot of work if you need a single icon or two in the nav. With Hugo we can preload the SVG icons, and inject them into our page with partial template or shortcode, skipping the network. The example will use Font Awesome, but the technique will work many other icon systems.</p>
+<h2 id=h.n65t9rnv9o9x class="h4 mt-4 mb-4">The Traditional Way</h2>
+<p>There are few choices, but the current and traditional way of adding Font Awesome icons is to add this in your page footer (or header). For Hugo, this would go into your header or footer partial template:</p>
+<pre class="p-1 pl-3 lines-dense"><code>&lt;script defer src=&#34;/static/fontawesome/fontawesome-all.js&#34;&gt;&lt;/script&gt;</code></pre>
+<p>and referring to the icon using something like:</p>
+<pre class="p-1 pl-3 lines-dense"><code>&lt;i class=&#34;fab fa-github&#34;&gt;&lt;/i&gt;</code></pre>
+<p>This is certainly easy and provides the full range of icons (and some extra features). However:</p>
+<ul>
+<li>this forces a network dependency on your website</li>
+<li>since it’s a script and deferred, there is a cost and a (small) delay in processing.</li>
+<li>may or may not trigger a repaint / reflow event</li>
+</ul>
+<p>If you are a performance maniac, this is a high cost to pay for a 300-byte GitHub icon used in the navigation bar.</p>
+<h2 id=h.87ag7i8lf5fa class="h4 mt-4 mb-4">The Embedded Way</h2>
+<p>Font Awesome and many other icon foundries now provide SVG versions of the their icons. With this we can directly embed the icon that is needed without any scripting or network call. It’s final form, we’ll make a partial template and call it as:</p>
+<pre class="p-1 pl-3 lines-dense"><code>{{ partial &#34;fontawesome.html&#34; &#34;github&#34; }} </code></pre>
+<p>or even simpler with a shortcode in content:</p>
+<pre class="p-1 pl-3 lines-dense"><code>{{&#037; fontawesome github &#037;}}</code></pre>
+<p>Both use no network calls. Here’s how to do it.</p>
+<h2 id=h.lb1r3spjzdb class="h4 mt-4 mb-4">Create a icon directory</h2>
+<p>We need a place to put our SVG icons. Create a <code>fontawesome</code> directory at the top level of your hugo project. That is, it should be parallel to your <code>content</code> directory. This directory will not be published to your website.</p>
+<h2 id=h.8h6yuvjweny9 class="h4 mt-4 mb-4">Download the icons you want.</h2>
+<p>SVG icons are hosting in the <a href=https://github.com/FortAwesome/Font-Awesome>FontAwesome/Font-Awesome</a> repo in the <a href=https://github.com/FortAwesome/Font-Awesome/tree/master/advanced-options/raw-svg>advanced-options/raw-svg</a> directory. Find the icon you want in here. For example here’s the <a href=https://github.com/FortAwesome/Font-Awesome/blob/master/advanced-options/raw-svg/brands/github.svg>GitHub Icon</a>. Click on the <em>raw</em> button and you’ll see the raw SVG version. Save this locally to your <code>fontawesome</code> directory.</p>
+<p>Since I hate doing anything manually, I made a script to do this. Adjust to your environment and needs:</p>
+<pre class="p-1 pl-3 lines-dense"><code>#!/bin/sh
+set -ex
+icons=&#34;twitter github&#34;</code></pre>
+<pre class="p-1 pl-3 lines-dense"><code>dest=fontawesome
+url=https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/advanced-options/raw-svg/brands</code></pre>
+<pre class="p-1 pl-3 lines-dense"><code>mkdir -p &#34;${dest}&#34;
+for icon in $icons; do
+  icon=&#34;${icon}.svg&#34;
+  wget -O &#34;${dest}/${icon}&#34; &#34;${url}/${icon}&#34;
+done</code></pre>
+<h2 id=h.iqk6z1t6bzsl class="h4 mt-4 mb-4">Make a partial template</h2>
+<p>Create a <code>fontawesome.htm</code>l file in your <code>layout/partials</code> directory with:</p>
+<pre class="p-1 pl-3 lines-dense"><code>&lt;span class=&#34;inline-svg&#34; &gt;
+{{ readFile ( print &#34;fontawesome/&#34; . &#34;.svg&#34; ) | safeHTML  }}
+&lt;/span&gt;</code></pre>
+<p>This works for plain text but has problems if it’s used with hover and focus events that change color. To fix this <code>fill=currentColor</code> needs to be added to the SVG <code>&lt;path&gt;</code> element. A more full featured version of the template might be:</p>
+<pre class="p-1 pl-3 lines-dense"><code>&lt;span class=&#34;inline-svg&#34; &gt;
+{{- $fname:=print &#34;fontawesome/&#34; . &#34;.svg&#34; -}}
+{{- $path:=&#34;&lt;path&#34; -}}
+{{- $fill:=&#34;&lt;path fill=\&#34;currentColor\&#34;&#34; -}}
+{{ replace (readFile $fname) $path $fill | safeHTML }}
+&lt;/span&gt;</code></pre>
+<h2 id=h.vkcs7n88lhjx class="h4 mt-4 mb-4">Style it</h2>
+<p>You need to add some style or else the icon will not render at all. This is where is get a little hacky. You’ll have to adjust the size to make sure it fits in with your text. This worked for me, but likely you’ll need to adjust the height, width, top (to push the icon down a bit to match the text line). <a href=http://www.elliotdahl.com>Elliot Dalh</a> wrote up more details in <a href=https://blog.prototypr.io/align-svg-icons-to-text-and-say-goodbye-to-font-icons-d44b3d7b26b4>Align SVG Icons to Text and Say Goodbye to Font Icons</a>.</p>
+<pre class="p-1 pl-3 lines-dense"><code>.inline-svg {
+  display: inline-block;
+  height: 1.15rem;
+  width: 1.15rem;
+  top: 0.15rem;
+  position: relative;
+}</code></pre>
+<h2 id=h.v708bfis201c class="h4 mt-4 mb-4">Use it in layouts</h2>
+<p>As advertised in the introduction, you can use the icon in your layouts or other partials using:</p>
+<pre class="p-1 pl-3 lines-dense"><code>{{ partial &#34;fontawesome.html&#34; &#34;github&#34; }}</code></pre>
+<h2 id=h.quutfbptd0mh class="h4 mt-4 mb-4">Shortcodes</h2>
+<p>If you want your <em>content</em> to use icons, then you need to use a shortcode. It’s almost the same:</p>
+<pre class="p-1 pl-3 lines-dense"><code>&lt;span class=&#34;inline-svg&#34; &gt;
+{{- $fname:=print &#34;fontawesome/&#34; ( .Get 0 ) &#34;.svg&#34; -}}
+{{- $path:=&#34;&lt;path&#34; -}}
+{{- $fill:=&#34;&lt;path fill=\&#34;currentColor\&#34;&#34; -}}
+{{ replace (readFile $fname) $path $fill | safeHTML }}
+&lt;/span&gt;</code></pre>
+<p>Place <em>this</em> <code>fontawesome.html</code> in <code>layouts/shortcodes</code> and use it as:</p>
+<pre class="p-1 pl-3 lines-dense"><code>{{&#037; fontawesome github &#037;}}</code></pre>
+<h2 id=h.ondcsu8sh7ox class="h4 mt-4 mb-4">Conclusion</h2>
+<p>One can add as many icons as needed, but there is only partial or shortcode for all of them. While Font Awesome’s javascript library and CDN offer additional features, if you just need an icon or two, it’s hard to beat using a shortcode or partial template with Hugo.</p>
+</article>
+<div>
+<a class="btn btn-light" href=/tags/hugo>hugo</a>
+<a class="btn btn-light" href=/tags/webdev>webdev</a>
+</div>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Using Font Awesome Icons in Hugo","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.client9.com/using-font-awesome-icons-in-hugo/"},"author":{"@type":"Person","name":"Nick Galbreath"},"publisher":{"@type":"Organization","name":"Nick Galbreath"},"datePublished":"2018-04-13T05:23:08Z"}</script>
+<hr>
+<div class="small text-center mb-3">&copy; 2018 Nick Galbreath</div>
+</div></div></div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html><html lang=en>
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,minimum-scale=1,initial-scale=1">
+<title>Docker and Alpine Linux (and systemd) | Nick Galbreath</title>
+<meta property=og:site_name content="Nick Galbreath">
+<meta property=og:type content=article>
+<meta property=og:title content="Docker and Alpine Linux (and systemd)">
+<meta property=og:description content>
+<meta property=og:url content=https://www.client9.com/article/docker-and-alpine-linux-and-systemd/>
+<meta property=og:locale content=en>
+<meta property=article:published_time content=2016-02-23T00:00:00Z>
+<meta name=twitter:card content=summary>
+<meta name=twitter:site content=NGalbreath>
+<meta name=twitter:creator content=NGalbreath>
+<meta name=description content>
+<meta name=format-detection content="telephone=no">
+<meta name=generator content="Hugo 0.51">
+<link rel=canonical href=https://www.client9.com/article/docker-and-alpine-linux-and-systemd/>
+<style>/*!* Bootstrap v4.1.3 (https://getbootstrap.com/)
+* Copyright 2011-2018 The Bootstrap Authors
+* Copyright 2011-2018 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)*/*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:#0000}@-ms-viewport{width:device-width}article,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}blockquote{margin:0 0 1rem}strong{font-weight:bolder}a{color:#007bff;text-decoration:none;background-color:#0000;-webkit-text-decoration-skip:objects}a:hover{color:#0056b3;text-decoration:underline}a:not([href]):not([tabindex]){color:inherit;text-decoration:none}a:not([href]):not([tabindex]):focus,a:not([href]):not([tabindex]):hover{color:inherit;text-decoration:none}a:not([href]):not([tabindex]):focus{outline:0}code,pre{font-family:SFMono-Regular,Menlo,Monaco,Consolas,liberation mono,courier new,monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto;-ms-overflow-style:scrollbar}img{vertical-align:middle;border-style:none}table{border-collapse:collapse}th{text-align:inherit}.h2,.h4,.h5,h1,h2,h3{margin-bottom:.5rem;font-family:inherit;font-weight:500;line-height:1.2;color:inherit}h1{font-size:2.5rem}.h2,h2{font-size:2rem}h3{font-size:1.75rem}.h4{font-size:1.5rem}.h5{font-size:1.25rem}hr{margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid #0000001a}.small{font-size:80%;font-weight:400}code{font-size:87.5%;color:#e83e8c;word-break:break-word}a>code{color:inherit}pre{display:block;font-size:87.5%;color:#212529}pre code{font-size:inherit;color:inherit;word-break:normal}.container-fluid{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.col-lg-8{position:relative;width:100%;min-height:1px;padding-right:15px;padding-left:15px}@media(min-width:992px){.col-lg-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}}.table{width:100%;margin-bottom:1rem;background-color:#0000}.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6}.table thead th{vertical-align:bottom;border-bottom:2px solid #dee2e6}.table tbody+tbody{border-top:2px solid #dee2e6}.table .table{background-color:#fff}.table-sm td,.table-sm th{padding:.3rem}.btn{display:inline-block;font-weight:400;text-align:center;white-space:nowrap;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid #0000;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}@media screen and (prefers-reduced-motion:reduce){.btn{transition:none}}.btn:focus,.btn:hover{text-decoration:none}.btn:focus{outline:0;box-shadow:0 0 0 .2rem #007bff40}.btn:disabled{opacity:.65}.btn:not(:disabled):not(.disabled){cursor:pointer}.btn-light{color:#212529;background-color:#f8f9fa;border-color:#f8f9fa}.btn-light:hover{color:#212529;background-color:#e2e6ea;border-color:#dae0e5}.btn-light:focus{box-shadow:0 0 0 .2rem #f8f9fa80}.btn-light:disabled{color:#212529;background-color:#f8f9fa;border-color:#f8f9fa}.btn-light:not(:disabled):not(.disabled).active,.btn-light:not(:disabled):not(.disabled):active{color:#212529;background-color:#dae0e5;border-color:#d3d9df}.btn-light:not(:disabled):not(.disabled).active:focus,.btn-light:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem #f8f9fa80}.nav-link{display:block;padding:.5rem 1rem}.nav-link:focus,.nav-link:hover{text-decoration:none}.bg-light{background-color:#f8f9fa!important}.border-bottom{border-bottom:1px solid #dee2e6!important}.rounded-circle{border-radius:50%!important}.d-flex{display:-ms-flexbox!important;display:flex!important}.justify-content-center{-ms-flex-pack:center!important;justify-content:center!important}.mb-0{margin-bottom:0!important}.mt-1{margin-top:.25rem!important}.ml-1{margin-left:.25rem!important}.mr-2{margin-right:.5rem!important}.mt-3{margin-top:1rem!important}.mb-3{margin-bottom:1rem!important}.mt-4{margin-top:1.5rem!important}.mb-4{margin-bottom:1.5rem!important}.p-1{padding:.25rem!important}.pb-2{padding-bottom:.5rem!important}.p-3{padding:1rem!important}.pb-3{padding-bottom:1rem!important}.pl-3{padding-left:1rem!important}.text-center{text-align:center!important}@font-face{font-family:tabular-numbers;src:local(charter),local("bitstream charter"),local(cambria);unicode-range:U+0030-0039}@font-face{font-family:emoji;src:local("Apple Color Emoji"),local("Segoe UI Emoji"),local("Segoe UI Symbol"),local("Noto Color Emoji")}body{font-family:-apple-system,BlinkMacSystemFont,segoe ui,ubuntu,sans-serif,emoji;font-size:1.25rem}body,code,pre{color:#000}a{color:#0366d6}p,li,td,blockquote{font-family:charter,bitstream charter,tabular-numbers,georgia,serif,emoji}code,kbd,var{tab-size:2;white-space:nowrap}pre>code{white-space:pre}.lines-dense{line-height:1.2}.nav-link{display:inline-block;color:#000;padding:0}.inline-svg{display:inline-block;height:1.15rem;width:1.15rem;top:.15rem;position:relative}.inline-svg:hover,.inline-svg:focus{color:#0366d6}</style>
+</head>
+<body>
+<div class="container-fluid mt-3">
+<div class="row justify-content-center">
+<div class=col-lg-8>
+<div class="mb-3 ml-1 border-bottom pb-2 d-flex">
+<div class="mr-2 mt-1" width=64px><a aria-label=home href=/><img width=64 height=64 class=rounded-circle alt="picture of Nick Galbreath" src="data:image/jpeg;base64,/9j/2wCEAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDIBCQkJDAsMGA0NGDIhHCEyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMv/AABEIAEAAQAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/APXvPPy47VHKfMbNTCHJ6U77PjOeKpcqIfM0VBHThFmqOv6vHoVgJ2jMkjtsjTOMn3PpXD6p4/1SayMdjFBbTk8uSW49vQ1E8RCD5W9Talg6tVc0Vod1c6npllN5NxfW8UndWkAI&#43;vpViGWG4TzIJY5U/vRsGH6V863usX8crG8hBLHJbJO78earQa1cW863FjdTW8w7oxU/pSjUm91oaTw9OKspa&#43;Z7x4ssdUutJmNhfrZxxxSPKTHuLgKfl&#43;lUvDVpPceHdOe7ee5Bt49kZbYm3aMEgAZyPUn8Olcj4f8AiTc6haXGka48ZaaB0iutu35ipwGA9fUCu88OebL4Z0oZMaC0iHH3m&#43;QfkP1&#43;lXzGDjZHW9KN2eDVP7SPQ/gaPtWRgg1hzGqgzH8YaRDrFlaJNMY44Z/MkAON64ORntziuAvY/DbMyRzwpsO0lWxg/WtnXpJr6eWCS4IlRnVHR2QbSeFODjHA&#43;tYj6Je3FkbZziNh80bRrsz6&#43;9cNeSlK7Z6&#43;FhKnTOb1KxABa0mS4gPHUGuWuLWIsdgMTDqD0rvn8H6fawB5hiXGMxEoD&#43;VcpqukLDcokMkrM3Tc2cfnW2Hmr2TJxUXKN5JGOhkRwG7dGFfTPhi2z4U0cgjmyh7/AOwK&#43;eLzRLq0sRc7hIoGSyqR0OD164Jr0X4a&#43;N5pLKXTtTVnhtI18mZV5C9Ahx19vpXVzqSvE8yrT9n8Wh158UacpcPJIm3k7o2H9Kq3HjTS0jf7POJ3UE4XoPrXDeIdZawVYCN80inIDZK&#43;/Bz7/h71xsaTyt5vKxg/K3SocTSDuei3ZtbyZr6JXUSqCypK7LyPTt9K0rPVfNtWVFO2MY5HSsfwgJZdLuGuLwyss2Am/OBgf4/pUWsaultObdJFXP3ueorzKsW5uKPapTTppsj1fV5EhKAfPyeRXPWMrXV4Xl2u21gC5wMnimapqa3AIU89OO9Jo1sxEs86EQou7LiuulDlhd7nHWleoktjoo7GDUNLmsFuHWCFCGeMcuTzgdcD5R&#43;ddD4dtorXw1Z/Zrfyg9rlwsm3eSOWPB5rz3T/ABZBbXk0f2aJYpcL55XLAf06n866PSNU1G10mFftFu0LRAKsgdSq47FSPz61bw82rJ&#43;ZzTxMG7v0OHM5LsRIZHx88snJ6dOae93I58kvhTjgDtWasxSPaefpWjFpMt08P2O4jmMiBnwGHlHuGyP5ZrpaS1ZhGbekSGK6e1nd4rmSPPDbGIz/AI10um6Lpuvbp7a5naaIDzUkOeT3Htwaxrrw/wDYbS4nnuR&#43;7X5Qq53Hn&#43;oH51e8Cawy&#43;LT9qKsb1DGW2hRv6g4HrjH41lWXNTc4PVGtGbhUUZrRnS2nheCKTcybiDWL43vBY28WmwfK0g3Pj&#43;7/APX/AKV6ZL5NravNKypGil2Y9gOteEa3qb6xq9xevkB2&#43;RT/AAqOg/KuPBKVWpzS2R2Y6qqdPljuzPrs9C12e10WNJnuGton2ttfcFBPAIzxXGVq6Drk2h3bSpGksTrtkjb&#43;IfXtXrtXR4h//9k=">
+</a></div>
+<div>
+<div class="h4 mb-0"><a class=nav-link href=/>Nick Galbreath</a></div>
+<div class="small lines-dense">CTO and co-founder of <a class=nav-link href=https://www.signalsciences.com/>Signal Sciences</a>. Author and <a class=nav-link href=/tags/presentations>speaker</a> on software engineering, devops, and security.
+</div>
+</div>
+</div>
+<article><h1 itemprop=title class=h2>Docker and Alpine Linux (and systemd)</h1>
+<div itemprop=subheading class="lines-dense pb-2"></div>
+<div class="small pb-3 byline">
+<a itemprop=author class=nav-link href=/>Nick Galbreath</a> &#x00b7; <time itemprop=pubdate datetime=2016-02-23T00:00:00Z>February 23, 2016</time>
+</div>
+<p>This <a href="https://news.ycombinator.com/item?id=11000827">comment</a> by the
+<a href=https://www.docker.com/company/management>CTO of Docker</a> on January
+31, 2016 implied that <a href=https://www.docker.com>Docker</a> was shifting
+the default base images from <a href=http://www.ubuntu.com>Ubuntu</a> to
+<a href=http://alpinelinux.org>Alpine Linux</a>. What&rsquo;s really going
+on?</p>
+<p>First note that this hasn&rsquo;t been confirmed (or denied) by
+Docker-The-Company, so this is all speculation on my part.</p>
+<h2 id=what-s-alpine-linux>What&rsquo;s Alpine Linux?</h2>
+<p>Alpine Linux is a small Linux distribution that uses <a href=http://www.musl-libc.org>musl
+libc</a> and <a href=https://busybox.net>busybox</a> for
+all the common Linux command line tools. These might not be the most
+compatible since they intentionally restrict features, but it also
+means it&rsquo;s small, and in general more secure (less surface area, less
+cruft from decades of development). Many users will never know the
+difference, especially since Alpine comes with a package manager and all
+the greatest hits of OSS are available.</p>
+<p>As a Host OS, it uses a hardened <a href=https://grsecurity.net>GRSecurity kernel</a>, and
+<a href=https://wiki.gentoo.org/wiki/OpenRC>OpenRC</a> as a very small <code>init</code>
+system (that&rsquo;s not SystemD, see below).</p>
+<p>And as a Docker base image, it is only 5MB.</p>
+<h2 id=why-is-docker-looking-at-alpine>Why is Docker looking at Alpine</h2>
+<p>Assuming it&rsquo;s true, there are some boring book-keeping reasons why
+this makes sense and some more interesting long term reasons.</p>
+<h3 id=to-save-resources>To Save Resources</h3>
+<p>Docker is hosting these base images. Using Alpine over Ubuntu means
+40x reduction in resources being used (188MB Ubuntu vs. 5MB Alpine).
+That&rsquo;s not just what Docker is hosting and sending over the network,
+but also for your target machine as well.</p>
+<p>They have no control over what Ubuntu does, and every LTS release
+seems to add 100MB to the base EC2 AMI. They could work on &ldquo;chopping
+down&rdquo; Ubuntu, but spending resources to fix a resource you don&rsquo;t
+control isn&rsquo;t a long term strategy. (Also, from personal experience,
+trying to cut the fat off a full OS produces less-than-great results).</p>
+<h3 id=docker-best-practice>Docker Best Practice</h3>
+<p>Using a full OS doesn&rsquo;t make much sense in a Docker world of &ldquo;one
+process per container&rdquo;. Just having a full OS invites bad-practice to
+creep in.</p>
+<h3 id=owning-the-customer>Owning the Customer</h3>
+<p>Does Docker want to be writing how-to guides for Ubuntu?
+Probably not. Do they want to be sending their users off to
+<code>ubuntu.com</code>? Probably not.</p>
+<h3 id=strategic-control>Strategic Control</h3>
+<p>The most important reason to shift to Alpine Linux is that Ubuntu
+16.04 is the first <a href=http://www.canonical.com>Ubuntu</a> &ldquo;LTS&rdquo; version
+that uses the full stack of
+<a href=https://en.wikipedia.org/wiki/Systemd>systemd</a>. In case you missed
+the memo, <code>systemd</code>, for better or worse, now ships on every major OS.
+Ubuntu was on of the hold outs, but it <a href=http://www.markshuttleworth.com/archives/1316>finally gave
+in</a>. While the Linux
+kernel manages machine resources (CPU, memory, etc), <code>systemd</code> manages
+the processes or applications on the machine (TLDR). This makes it a very
+critical part of the whole operating system. <code>systemd</code> is sponsored
+(or outright controlled) by <a href=http://redhat.com/>RedHat</a>.</p>
+<p>Since Docker-The-Runtime is a process and running containers are
+more-or-less a special case of a process, <code>systemd</code> thinks the container
+runtime should by under their purview. From a post on the
+<a href=https://coreos.com/>CoreOS</a> blog:</p>
+<blockquote>
+<p>&hellip; it&rsquo;s a responsibility for systemd to integrate containers into
+the OS. <a href=https://coreos.com/blog/qa-with-lennart-systemd/>Where systemd and Containers Meet: Q&amp;A with Lennart
+Poettering</a>
+Lennart Poettering, September 16, 2015</p>
+</blockquote>
+<p>Given that, and after reading the full article, where does
+Docker-The-Runtime fit in? It doesn&rsquo;t.</p>
+<p>Ubuntu 16 is due in April 2016 will run the full systemd stack. If
+Docker continued with Ubuntu it would be shipping a technology that
+has implicitly (?) said that Docker-the-Runtime is obsolete. And every
+other OS is shipping systemd as well. This is not a great position to
+be in.</p>
+<h2 id=conclusion>Conclusion</h2>
+<p>To repeat, the Docker-The-Company has not confirmed anything about
+Alpine Linux (and interestingly they haven&rsquo;t denied it either). But I
+were them, I&rsquo;d sure be looking into something like Alpine Linux. And
+notice how Alpine Linux <em>does not</em> use systemd.</p>
+<p>Regardless, this competition on &ldquo;what is an Operating System&rdquo; is great
+for end users. Innovation in the OS space has been sorely lacking.</p>
+<p>Is Docker planning a host OS (running Docker-The-Runtime) ? Or just
+using this as a guest OS (inside containers)? Or both? Stay tuned to
+find out!</p>
+<p>Update: A colleague wrote in and said &ldquo;Is Docker planning a host OS?&rdquo;
+Almost certainly :)&rdquo;</p>
+</article>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Docker and Alpine Linux (and systemd)","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.client9.com/article/docker-and-alpine-linux-and-systemd/"},"author":{"@type":"Person","name":"Nick Galbreath"},"publisher":{"@type":"Organization","name":"Nick Galbreath"},"datePublished":"2016-02-23T00:00:00Z"}</script>
+<hr>
+<div class="small text-center mb-3">&copy; 2018 Nick Galbreath</div>
+</div></div></div>
+</body>
+</html>

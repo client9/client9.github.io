@@ -1,0 +1,4 @@
+User-agent: *
+
+
+Sitemap: https://www.client9.com/sitemap.xml

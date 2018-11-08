@@ -1,0 +1,92 @@
+<!doctype html><html lang=en>
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,minimum-scale=1,initial-scale=1">
+<title>Designing HTML for Safari Reader Mode | Nick Galbreath</title>
+<meta property=og:site_name content="Nick Galbreath">
+<meta property=og:type content=article>
+<meta property=og:title content="Designing HTML for Safari Reader Mode">
+<meta property=og:description content="Simple rules to make your HTML page work with Safari Reader Mode, and to create subtitles and bylines">
+<meta property=og:url content=https://www.client9.com/designing-html-for-safari-reader-mode/>
+<meta property=og:locale content=en>
+<meta property=article:published_time content=2018-04-10T17:14:56Z>
+<meta name=twitter:card content=summary>
+<meta name=twitter:site content=NGalbreath>
+<meta name=twitter:creator content=NGalbreath>
+<meta name=description content="Simple rules to make your HTML page work with Safari Reader Mode, and to create subtitles and bylines">
+<meta name=format-detection content="telephone=no">
+<meta name=generator content="Hugo 0.51">
+<link rel=canonical href=https://www.client9.com/designing-html-for-safari-reader-mode/>
+<style>/*!* Bootstrap v4.1.3 (https://getbootstrap.com/)
+* Copyright 2011-2018 The Bootstrap Authors
+* Copyright 2011-2018 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)*/*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:#0000}@-ms-viewport{width:device-width}article,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}blockquote{margin:0 0 1rem}strong{font-weight:bolder}a{color:#007bff;text-decoration:none;background-color:#0000;-webkit-text-decoration-skip:objects}a:hover{color:#0056b3;text-decoration:underline}a:not([href]):not([tabindex]){color:inherit;text-decoration:none}a:not([href]):not([tabindex]):focus,a:not([href]):not([tabindex]):hover{color:inherit;text-decoration:none}a:not([href]):not([tabindex]):focus{outline:0}code,pre{font-family:SFMono-Regular,Menlo,Monaco,Consolas,liberation mono,courier new,monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto;-ms-overflow-style:scrollbar}img{vertical-align:middle;border-style:none}table{border-collapse:collapse}th{text-align:inherit}.h2,.h4,.h5,h1,h2,h3{margin-bottom:.5rem;font-family:inherit;font-weight:500;line-height:1.2;color:inherit}h1{font-size:2.5rem}.h2,h2{font-size:2rem}h3{font-size:1.75rem}.h4{font-size:1.5rem}.h5{font-size:1.25rem}hr{margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid #0000001a}.small{font-size:80%;font-weight:400}code{font-size:87.5%;color:#e83e8c;word-break:break-word}a>code{color:inherit}pre{display:block;font-size:87.5%;color:#212529}pre code{font-size:inherit;color:inherit;word-break:normal}.container-fluid{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.col-lg-8{position:relative;width:100%;min-height:1px;padding-right:15px;padding-left:15px}@media(min-width:992px){.col-lg-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}}.table{width:100%;margin-bottom:1rem;background-color:#0000}.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6}.table thead th{vertical-align:bottom;border-bottom:2px solid #dee2e6}.table tbody+tbody{border-top:2px solid #dee2e6}.table .table{background-color:#fff}.table-sm td,.table-sm th{padding:.3rem}.btn{display:inline-block;font-weight:400;text-align:center;white-space:nowrap;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid #0000;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}@media screen and (prefers-reduced-motion:reduce){.btn{transition:none}}.btn:focus,.btn:hover{text-decoration:none}.btn:focus{outline:0;box-shadow:0 0 0 .2rem #007bff40}.btn:disabled{opacity:.65}.btn:not(:disabled):not(.disabled){cursor:pointer}.btn-light{color:#212529;background-color:#f8f9fa;border-color:#f8f9fa}.btn-light:hover{color:#212529;background-color:#e2e6ea;border-color:#dae0e5}.btn-light:focus{box-shadow:0 0 0 .2rem #f8f9fa80}.btn-light:disabled{color:#212529;background-color:#f8f9fa;border-color:#f8f9fa}.btn-light:not(:disabled):not(.disabled).active,.btn-light:not(:disabled):not(.disabled):active{color:#212529;background-color:#dae0e5;border-color:#d3d9df}.btn-light:not(:disabled):not(.disabled).active:focus,.btn-light:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem #f8f9fa80}.nav-link{display:block;padding:.5rem 1rem}.nav-link:focus,.nav-link:hover{text-decoration:none}.bg-light{background-color:#f8f9fa!important}.border-bottom{border-bottom:1px solid #dee2e6!important}.rounded-circle{border-radius:50%!important}.d-flex{display:-ms-flexbox!important;display:flex!important}.justify-content-center{-ms-flex-pack:center!important;justify-content:center!important}.mb-0{margin-bottom:0!important}.mt-1{margin-top:.25rem!important}.ml-1{margin-left:.25rem!important}.mr-2{margin-right:.5rem!important}.mt-3{margin-top:1rem!important}.mb-3{margin-bottom:1rem!important}.mt-4{margin-top:1.5rem!important}.mb-4{margin-bottom:1.5rem!important}.p-1{padding:.25rem!important}.pb-2{padding-bottom:.5rem!important}.p-3{padding:1rem!important}.pb-3{padding-bottom:1rem!important}.pl-3{padding-left:1rem!important}.text-center{text-align:center!important}@font-face{font-family:tabular-numbers;src:local(charter),local("bitstream charter"),local(cambria);unicode-range:U+0030-0039}@font-face{font-family:emoji;src:local("Apple Color Emoji"),local("Segoe UI Emoji"),local("Segoe UI Symbol"),local("Noto Color Emoji")}body{font-family:-apple-system,BlinkMacSystemFont,segoe ui,ubuntu,sans-serif,emoji;font-size:1.25rem}body,code,pre{color:#000}a{color:#0366d6}p,li,td,blockquote{font-family:charter,bitstream charter,tabular-numbers,georgia,serif,emoji}code,kbd,var{tab-size:2;white-space:nowrap}pre>code{white-space:pre}.lines-dense{line-height:1.2}.nav-link{display:inline-block;color:#000;padding:0}.inline-svg{display:inline-block;height:1.15rem;width:1.15rem;top:.15rem;position:relative}.inline-svg:hover,.inline-svg:focus{color:#0366d6}</style>
+</head>
+<body>
+<div class="container-fluid mt-3">
+<div class="row justify-content-center">
+<div class=col-lg-8>
+<div class="mb-3 ml-1 border-bottom pb-2 d-flex">
+<div class="mr-2 mt-1" width=64px><a aria-label=home href=/><img width=64 height=64 class=rounded-circle alt="picture of Nick Galbreath" src="data:image/jpeg;base64,/9j/2wCEAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDIBCQkJDAsMGA0NGDIhHCEyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMv/AABEIAEAAQAMBIgACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5&#43;gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4&#43;Tl5ufo6ery8/T19vf4&#43;fr/2gAMAwEAAhEDEQA/APXvPPy47VHKfMbNTCHJ6U77PjOeKpcqIfM0VBHThFmqOv6vHoVgJ2jMkjtsjTOMn3PpXD6p4/1SayMdjFBbTk8uSW49vQ1E8RCD5W9Talg6tVc0Vod1c6npllN5NxfW8UndWkAI&#43;vpViGWG4TzIJY5U/vRsGH6V863usX8crG8hBLHJbJO78earQa1cW863FjdTW8w7oxU/pSjUm91oaTw9OKspa&#43;Z7x4ssdUutJmNhfrZxxxSPKTHuLgKfl&#43;lUvDVpPceHdOe7ee5Bt49kZbYm3aMEgAZyPUn8Olcj4f8AiTc6haXGka48ZaaB0iutu35ipwGA9fUCu88OebL4Z0oZMaC0iHH3m&#43;QfkP1&#43;lXzGDjZHW9KN2eDVP7SPQ/gaPtWRgg1hzGqgzH8YaRDrFlaJNMY44Z/MkAON64ORntziuAvY/DbMyRzwpsO0lWxg/WtnXpJr6eWCS4IlRnVHR2QbSeFODjHA&#43;tYj6Je3FkbZziNh80bRrsz6&#43;9cNeSlK7Z6&#43;FhKnTOb1KxABa0mS4gPHUGuWuLWIsdgMTDqD0rvn8H6fawB5hiXGMxEoD&#43;VcpqukLDcokMkrM3Tc2cfnW2Hmr2TJxUXKN5JGOhkRwG7dGFfTPhi2z4U0cgjmyh7/AOwK&#43;eLzRLq0sRc7hIoGSyqR0OD164Jr0X4a&#43;N5pLKXTtTVnhtI18mZV5C9Ahx19vpXVzqSvE8yrT9n8Wh158UacpcPJIm3k7o2H9Kq3HjTS0jf7POJ3UE4XoPrXDeIdZawVYCN80inIDZK&#43;/Bz7/h71xsaTyt5vKxg/K3SocTSDuei3ZtbyZr6JXUSqCypK7LyPTt9K0rPVfNtWVFO2MY5HSsfwgJZdLuGuLwyss2Am/OBgf4/pUWsaultObdJFXP3ueorzKsW5uKPapTTppsj1fV5EhKAfPyeRXPWMrXV4Xl2u21gC5wMnimapqa3AIU89OO9Jo1sxEs86EQou7LiuulDlhd7nHWleoktjoo7GDUNLmsFuHWCFCGeMcuTzgdcD5R&#43;ddD4dtorXw1Z/Zrfyg9rlwsm3eSOWPB5rz3T/ABZBbXk0f2aJYpcL55XLAf06n866PSNU1G10mFftFu0LRAKsgdSq47FSPz61bw82rJ&#43;ZzTxMG7v0OHM5LsRIZHx88snJ6dOae93I58kvhTjgDtWasxSPaefpWjFpMt08P2O4jmMiBnwGHlHuGyP5ZrpaS1ZhGbekSGK6e1nd4rmSPPDbGIz/AI10um6Lpuvbp7a5naaIDzUkOeT3Htwaxrrw/wDYbS4nnuR&#43;7X5Qq53Hn&#43;oH51e8Cawy&#43;LT9qKsb1DGW2hRv6g4HrjH41lWXNTc4PVGtGbhUUZrRnS2nheCKTcybiDWL43vBY28WmwfK0g3Pj&#43;7/APX/AKV6ZL5NravNKypGil2Y9gOteEa3qb6xq9xevkB2&#43;RT/AAqOg/KuPBKVWpzS2R2Y6qqdPljuzPrs9C12e10WNJnuGton2ttfcFBPAIzxXGVq6Drk2h3bSpGksTrtkjb&#43;IfXtXrtXR4h//9k=">
+</a></div>
+<div>
+<div class="h4 mb-0"><a class=nav-link href=/>Nick Galbreath</a></div>
+<div class="small lines-dense">CTO and co-founder of <a class=nav-link href=https://www.signalsciences.com/>Signal Sciences</a>. Author and <a class=nav-link href=/tags/presentations>speaker</a> on software engineering, devops, and security.
+</div>
+</div>
+</div>
+<article><h1 itemprop=title class=h2>Designing HTML for Safari Reader Mode</h1>
+<div itemprop=subheading class="lines-dense pb-2">Simple rules to make your HTML page work with Safari Reader Mode, and to create subtitles and bylines</div>
+<div class="small pb-3 byline">
+<a itemprop=author class=nav-link href=/>Nick Galbreath</a> &#x00b7; <time itemprop=pubdate datetime=2018-04-10T17:14:56Z>April 10, 2018</time>
+</div>
+<p>For whatever reason, Apple doesn’t provide any guidance on how to design for <a href=https://www.nytimes.com/2017/02/14/technology/personaltech/safari-reader.html>Safari Reader Mode</a> . Maybe they want the right to change it at any time or maybe it’s to prevent abuse and advertising sneaking in. Likewise, it’s near impossible to find any third-party guidance on how to structure your HTML. It’s mostly guessing, checking reader mode, editing HTML, reloading until it works. But after looking at the Reader javascript source code, and a lot of <em>View Source</em> on numerous publications, I’ve come up with some rules on how to structure HTML to optimize for Reader. There are no doubt many alternative rules and layouts, but this seems to work.</p>
+<h2 id=h.mwvtgrt197rw class="h4 mt-4 mb-4">Structure the main content</h2>
+<p>The main content (include the headline and other content) should be in a single <code>&lt;main&gt;</code> tag. Other tags like <code>&lt;article&gt;</code> also work. The article should be text-heavy. If there are too many links, lists, or other non-text items, Reader might not trigger. Conversely, if the HTML node immediately prior to the article node is text-heavy it might bleed into the main article.</p>
+<h2 id=h.mpz9kc8z0b7s class="h4 mt-4 mb-4">Structure the title</h2>
+<p>The title of the article should be a &lt;h1&gt; immediately after the <code>&lt;main&gt;</code> tag.</p>
+<h2 id=h.s96j6swf6k05 class="h4 mt-4 mb-4">Structure the subtitle</h2>
+<p>Put the subtitle or a short description as a <code>&lt;div&gt;</code> under the <code>&lt;h1&gt;</code> tag.</p>
+<p>Update 2018-05-01: It appears the subtitle has a maximum length of under 200 character. If it exceeds this value, it’s just treated as paragraph. 150 characters seems safe, but unclear what the extract threshold is.</p>
+<h2 id=h.tjgdlz1jx7am class="h4 mt-4 mb-4">Add a publication date byline</h2>
+<p>Underneath the subtitle, add a <code>&lt;div&gt;</code> that wraps a <code>&lt;time&gt;</code> tag, with a <code>datetime</code> attribute, for the publication date, will trigger Reader to make a byline with the author and the date. It’s unclear where the author part comes from. Possibly from <a href=https://developers.google.com/search/docs/guides/intro-structured-data>Google search</a>, <a href=http://ogp.me>Open Graph</a>, or <a href=https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started>Twitter Card</a> metadata.</p>
+<p>In <a href=https://gohugo.io>hugo</a>, the static site blog generator, this can be done using:</p>
+<pre class="p-1 pl-3 lines-dense"><code>&lt;div&gt;
+&lt;time datetime=&#34;{{ .Date.Format &#34;2006-01-02T15:04:05Z&#34; }}&#34;&gt;
+{{- .Date.Format (.Site.Params.dateform | default &#34;January 2, 2006&#34;) -}}
+&lt;/time&gt;
+&lt;/div&gt;</code></pre>
+<h2 id=h.yf0whk85mms4 class="h4 mt-4 mb-4">Working with bylines</h2>
+<p>You can make limited custom bylines as well. If <code>&lt;div&gt;</code> above also uses a <code>byline</code> class, Reader uses the entire <code>&lt;div&gt;</code>as a byline. Within reason: the total text needs to be short or Reader will reject it. The class <code>byline</code> does not need to be defined or provide style, it just needs to be present. Likewise, other CSS classes can be used, but <code>byline</code> must be included.</p>
+<p>Again, in hugo:</p>
+<pre class="p-1 pl-3 lines-dense"><code>&lt;div class=&#34;byline another-class etc&#34;&gt;
+By &lt;a href=&#34;/&#34;&gt;Your Name Here&lt;/a&gt; --
+&lt;time datetime=&#34;{{ .Date.Format &#34;2006-01-02T15:04:05Z&#34; }}&#34;&gt;
+{{- .Date.Format (.Site.Params.dateform | default &#34;January 2, 2006&#34;) -}}
+&lt;/time&gt;
+&lt;/div&gt;</code></pre>
+<h2 id=h.8zmvthrfjp8u class="h4 mt-4 mb-4">All Together</h2>
+<p>In the end, the main HTML for the content should look like:</p>
+<pre class="p-1 pl-3 lines-dense"><code>&lt;main&gt;
+&lt;h1&gt;Your title&lt;h1&gt;
+&lt;div&gt;Your subtitle&lt;/div&gt;
+&lt;div class=&#34;byline&#34;&gt;
+By &lt;a href=&#34;/&#34;&gt;Your Name&lt;/a&gt; -- 
+&lt;time datetime=&#34;2018-04-06T05:52:50Z&#34;&gt;April 6, 2018&lt;/time&gt;
+&lt;/div&gt;
+&lt;p&gt; article content... &lt;/p&gt;
+&lt;p&gt; article content... &lt;/p&gt;
+&lt;/main&gt;</code></pre>
+<p>There are other variations that might work, but this provides a good base to start with. Not investigated are how images work with Reader.. When in doubt, <em>View Source</em> on a major publication is your friend.</p>
+<p>Update 2018-04-12: Changed wrapper tag from <code>&lt;article&gt;</code> to <code>&lt;main&gt;</code>. Using <code>&lt;main&gt;</code> is more <a href=https://dequeuniversity.com/rules/axe/2.2/bypass>accessible</a>.</p>
+</article>
+<div>
+<a class="btn btn-light" href=/tags/webdev>webdev</a>
+<a class="btn btn-light" href=/tags/hugo>hugo</a>
+</div>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Designing HTML for Safari Reader Mode","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.client9.com/designing-html-for-safari-reader-mode/"},"author":{"@type":"Person","name":"Nick Galbreath"},"publisher":{"@type":"Organization","name":"Nick Galbreath"},"datePublished":"2018-04-10T17:14:56Z"}</script>
+<hr>
+<div class="small text-center mb-3">&copy; 2018 Nick Galbreath</div>
+</div></div></div>
+</body>
+</html>
